@@ -13,7 +13,7 @@ npm run dev
 ```
 
 ### 3. Open the App
-Navigate to **http://localhost:5173** in your browser
+Navigate to **http://localhost:** in your browser
 
 ## What You'll See
 
