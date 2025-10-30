@@ -277,11 +277,38 @@ These are **intentional limitations** for a front-end demo project.
 
 ### Production Dependencies
 
-json { "react": "^18.3.1", "react-dom": "^18.3.1", "react-router-dom": "^6.28.0", "zustand": "^5.0.1", "dexie": "^4.0.10", "msw": "^2.6.5", "@dnd-kit/core": "^6.3.1", "@dnd-kit/sortable": "^9.0.0", "@dnd-kit/utilities": "^3.2.2", "react-hook-form": "^7.53.2", "@hookform/resolvers": "^3.9.1", "zod": "^3.23.8", "lucide-react": "^0.462.0", "clsx": "^2.1.1", "tailwind-merge": "^2.5.5" }
+```json
+{
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "react-router-dom": "^6.28.0",
+  "zustand": "^5.0.1",
+  "dexie": "^4.0.10",
+  "msw": "^2.6.5",
+  "@dnd-kit/core": "^6.3.1",
+  "@dnd-kit/sortable": "^9.0.0",
+  "@dnd-kit/utilities": "^3.2.2",
+  "react-hook-form": "^7.53.2",
+  "@hookform/resolvers": "^3.9.1",
+  "zod": "^3.23.8",
+  "lucide-react": "^0.462.0",
+  "clsx": "^2.1.1",
+  "tailwind-merge": "^2.5.5"
+}
 
 
 ### Dev Dependencies
-json { "typescript": "~5.6.2", "vite": "^7.1.12", "@vitejs/plugin-react": "^4.3.4", "tailwindcss": "^3.4.15", "postcss": "^8.4.49", "autoprefixer": "^10.4.20", "@types/react": "^18.3.12", "@types/react-dom": "^18.3.1", "@types/node": "^22.10.1" }
+{
+  "typescript": "~5.6.2",
+  "vite": "^7.1.12",
+  "@vitejs/plugin-react": "^4.3.4",
+  "tailwindcss": "^3.4.15",
+  "postcss": "^8.4.49",
+  "autoprefixer": "^10.4.20",
+  "@types/react": "^18.3.12",
+  "@types/react-dom": "^18.3.1",
+  "@types/node": "^22.10.1"
+}
 
 ---
 
