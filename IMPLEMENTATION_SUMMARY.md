@@ -7,33 +7,33 @@
 ##  Requirements Met
 
 ####  Jobs Board - All Features Implemented
-List with pagination and filters (title, status, tags)
+**List with pagination and filters (title, status, tags)
 
-Create and edit jobs with validation
+**Create and edit jobs with validation
 
-Archive / Unarchive jobs
+**Archive / Unarchive jobs
 
-Drag-and-drop reorder with rollback on failure
+**Drag-and-drop reorder with rollback on failure
 
-Open job details at /jobs/:jobId
+**Open job details at /jobs/:jobId
 
 ####  Candiadates - All Features Implemented
-Virtualized list with search and filter
+**Virtualized list with search and filter
 
-Candidate profile page at /candidates/:id
+**Candidate profile page at /candidates/:id
 
-Move candidates between stages (drag-and-drop)
+**Move candidates between stages (drag-and-drop)
 
-Add notes with @mentions
+**Add notes with @mentions
 
 ####  Assessments - All Features Implemenyed
-Build assessments per job (multiple question types)
+**Build assessments per job (multiple question types)
 
-Live preview of form
+**Live preview of form
 
-Save builder state and responses locally
+**Save builder state and responses locally
 
-Validation and conditional questions
+*8Validation and conditional questions
 
 ---
 
