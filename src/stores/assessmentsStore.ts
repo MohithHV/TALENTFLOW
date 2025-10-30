@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { Assessment, AssessmentSection, Question, AssessmentResponse } from '@/types';
+import type { Assessment, AssessmentSection, Question } from '@/types';
 
 interface AssessmentsState {
   assessment: Assessment | null;

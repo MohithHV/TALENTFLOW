@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAssessmentsStore } from '@/stores/assessmentsStore';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

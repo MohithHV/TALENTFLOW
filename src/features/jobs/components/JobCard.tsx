@@ -12,10 +12,9 @@ interface JobCardProps {
   job: Job;
   onEdit: (job: Job) => void;
   onArchiveToggle: (job: Job) => void;
-  isDragging: boolean;
 }
 
-export function JobCard({ job, onEdit, onArchiveToggle, isDragging }: JobCardProps) {
+export function JobCard({ job, onEdit, onArchiveToggle }: JobCardProps) {
   const {
     attributes,
     listeners,

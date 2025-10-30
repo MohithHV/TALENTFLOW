@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
   DndContext,
   closestCenter,
@@ -45,7 +44,7 @@ export function JobsList({ onCreateJob, onEditJob }: JobsListProps) {
   } = useJobsStore();
 
   const [searchInput, setSearchInput] = useState(filters.search || '');
-  const [isDragging, setIsDragging] = useState(false);
+  
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -95,7 +94,6 @@ export function JobsList({ onCreateJob, onEditJob }: JobsListProps) {
 
   async function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
-    setIsDragging(false);
 
     if (!over || active.id === over.id) return;
 
@@ -126,9 +124,7 @@ export function JobsList({ onCreateJob, onEditJob }: JobsListProps) {
     }
   }
 
-  function handleDragStart() {
-    setIsDragging(true);
-  }
+  
 
   return (
     <div className="space-y-4">
@@ -206,7 +202,6 @@ export function JobsList({ onCreateJob, onEditJob }: JobsListProps) {
         <DndContext
           sensors={sensors}
           collisionDetection={closestCenter}
-          onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
         >
           <SortableContext items={jobs.map(j => j.id)} strategy={verticalListSortingStrategy}>
@@ -217,7 +212,6 @@ export function JobsList({ onCreateJob, onEditJob }: JobsListProps) {
                   job={job}
                   onEdit={onEditJob}
                   onArchiveToggle={handleArchiveToggle}
-                  isDragging={isDragging}
                 />
               ))}
             </div>

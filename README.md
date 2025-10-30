@@ -8,7 +8,7 @@ A modern, feature-rich hiring platform built with React, TypeScript, and cutting
 
 ## Features Implemented
 
-### Phase 1: Jobs Board (Complete)
+### 1: Jobs Board 
 
 - **Jobs List View**
   - Server-like pagination with configurable page sizes
@@ -42,7 +42,7 @@ A modern, feature-rich hiring platform built with React, TypeScript, and cutting
   - Full job details page with edit capabilities
   - Breadcrumb navigation back to jobs list
 
-### Phase 2: Candidates (Complete)
+### 2: Candidates 
 
 - **Virtualized List View**
   - 1000+ candidates with smooth scrolling using @tanstack/react-virtual
@@ -68,7 +68,7 @@ A modern, feature-rich hiring platform built with React, TypeScript, and cutting
   - Real-time mention highlighting
   - Note history with timestamps
 
-### Phase 3: Assessments (Complete)
+### 3: Assessments 
 
 - **Assessment Builder**
   - Visual builder interface with sidebar and canvas
@@ -242,15 +242,15 @@ Data persists in IndexedDB (`TalentFlowDB`) and survives page refreshes.
 - `PATCH /api/jobs/:id` - Update job
 - `PATCH /api/jobs/:id/reorder` - Reorder job (with occasional 500 errors)
 
-### Candidates (Coming Soon)
-- `GET /api/candidates` - List candidates
-- `PATCH /api/candidates/:id` - Update candidate stage
-- `GET /api/candidates/:id/timeline` - Get stage history
 
-### Assessments (Coming Soon)
-- `GET /api/assessments/:jobId` - Get job assessment
-- `PUT /api/assessments/:jobId` - Save assessment
-- `POST /api/assessments/:jobId/submit` - Submit response
+
+
+
+
+
+
+
+
 
 ## Known Issues & Limitations
 
@@ -275,27 +275,15 @@ IndexedDB and Service Workers required.
 - **Efficient Re-renders** - Zustand for minimal re-renders
 
 ## Future Enhancements
-
-### Phase 2: Candidates
-- Virtualized list for 1000+ candidates using @tanstack/react-virtual
-- Client-side search and server-like filtering
-- Kanban board for stage management
-- Timeline view showing status changes
-- Notes with @mention support
-
-### Phase 3: Assessments
-- Visual assessment builder with drag-and-drop
-- Multiple question types (single/multi-choice, text, numeric, file upload)
-- Live preview pane
-- Conditional question logic
-- Form validation and submission
-
-### Bonus Features
-- Dark mode support
 - Export data (CSV, JSON)
 - Bulk operations
 - Advanced filtering
 - Analytics dashboard
+
+
+### Bonus Features
+- Dark mode support
+
 
 ## Contributing
 

@@ -91,10 +91,9 @@ If you see stale data:
 ### MSW Not Working
 Make sure you're accessing via `localhost` (not `127.0.0.1` or custom domain)
 
-## Next Steps
 
-This is Phase 1 (Jobs Board). Coming soon:
-- Phase 2: Candidates management
-- Phase 3: Assessments builder
+
+
+
 
 Enjoy exploring TalentFlow! 

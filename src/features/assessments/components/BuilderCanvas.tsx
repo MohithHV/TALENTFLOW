@@ -1,5 +1,5 @@
 import { useAssessmentsStore } from '@/stores/assessmentsStore';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { SectionEditor } from './SectionEditor';
 import { QuestionEditor } from './QuestionEditor';
 import { FileText } from 'lucide-react';

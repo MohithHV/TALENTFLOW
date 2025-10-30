@@ -1,5 +1,5 @@
 import { http, HttpResponse, delay } from 'msw';
-import type { Job, Candidate, JobFilters, PaginatedResponse } from '@/types';
+import type { Job, Candidate, PaginatedResponse } from '@/types';
 import { dbHelpers } from '@/lib/db';
 import { getRandomDelay, shouldSimulateError, generateId, generateSlug } from '@/lib/utils';
 
@@ -362,7 +362,7 @@ export const handlers = [
   }),
 
   // POST /assessments/:jobId/submit
-  http.post(`${API_BASE}/assessments/:jobId/submit`, async ({ params, request }) => {
+  http.post(`${API_BASE}/assessments/:jobId/submit`, async ({ request }) => {
     await delay(getRandomDelay());
 
     if (shouldSimulateError(0.1)) {
