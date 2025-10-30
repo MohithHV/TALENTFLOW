@@ -17,23 +17,23 @@
 ### Core Technologies
 
 ```
-React 18.3          - UI framework
-TypeScript 5.6      - Type safety
-Vite 7.1           - Build tool & dev server
+React          - UI framework
+TypeScript      - Type safety
+Vite           - Build tool & dev server
 ```
 
 ### State & Data Management
 
 ```
-Zustand 5.0        - Lightweight state management
-Dexie 4.x          - IndexedDB wrapper for persistence
-MSW 2.6            - API mocking with network simulation
+Zustand        - Lightweight state management
+Dexie          - IndexedDB wrapper for persistence
+MSW            - API mocking with network simulation
 ```
 
 ### UI & Styling
 
 ```
-Tailwind CSS 3.4   - Utility-first styling
+Tailwind CSS       - Utility-first styling
 Lucide React       - Icon library
 Custom Components  - shadcn/ui patterns
 ```
@@ -44,7 +44,7 @@ Custom Components  - shadcn/ui patterns
 @dnd-kit/core      - Drag and drop
 React Hook Form    - Form management
 Zod                - Schema validation
-React Router 6     - Client-side routing
+React Router       - Client-side routing
 ```
 
 ---
