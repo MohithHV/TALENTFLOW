@@ -242,15 +242,14 @@ Data persists in IndexedDB (`TalentFlowDB`) and survives page refreshes.
 - `PATCH /api/jobs/:id` - Update job
 - `PATCH /api/jobs/:id/reorder` - Reorder job (with occasional 500 errors)
 
-### Candidates (Coming Soon)
-- `GET /api/candidates` - List candidates
-- `PATCH /api/candidates/:id` - Update candidate stage
-- `GET /api/candidates/:id/timeline` - Get stage history
 
-### Assessments (Coming Soon)
-- `GET /api/assessments/:jobId` - Get job assessment
-- `PUT /api/assessments/:jobId` - Save assessment
-- `POST /api/assessments/:jobId/submit` - Submit response
+
+
+
+
+
+
+
 
 ## Known Issues & Limitations
 
