@@ -275,27 +275,14 @@ IndexedDB and Service Workers required.
 - **Efficient Re-renders** - Zustand for minimal re-renders
 
 ## Future Enhancements
-
-### Phase 2: Candidates
-- Virtualized list for 1000+ candidates using @tanstack/react-virtual
-- Client-side search and server-like filtering
-- Kanban board for stage management
-- Timeline view showing status changes
-- Notes with @mention support
-
-### Phase 3: Assessments
-- Visual assessment builder with drag-and-drop
-- Multiple question types (single/multi-choice, text, numeric, file upload)
-- Live preview pane
-- Conditional question logic
-- Form validation and submission
-
-### Bonus Features
-- Dark mode support
 - Export data (CSV, JSON)
 - Bulk operations
 - Advanced filtering
 - Analytics dashboard
+
+### Bonus Features
+- Dark mode support
+
 
 ## Contributing
 
