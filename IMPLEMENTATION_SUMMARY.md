@@ -276,8 +276,7 @@ These are **intentional limitations** for a front-end demo project.
 ## Dependencies
 
 ### Production Dependencies
-
-```json
+json
 {
   "react": "^18.3.1",
   "react-dom": "^18.3.1",
@@ -296,8 +295,8 @@ These are **intentional limitations** for a front-end demo project.
   "tailwind-merge": "^2.5.5"
 }
 
-
 ### Dev Dependencies
+json
 {
   "typescript": "~5.6.2",
   "vite": "^7.1.12",
