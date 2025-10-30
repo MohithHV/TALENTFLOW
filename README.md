@@ -240,16 +240,6 @@ Data persists in IndexedDB (`TalentFlowDB`) and survives page refreshes.
 - `GET /api/jobs/:id` - Get single job
 - `POST /api/jobs` - Create new job
 - `PATCH /api/jobs/:id` - Update job
-- `PATCH /api/jobs/:id/reorder` - Reorder job (with occasional 500 errors)
-
-
-
-
-
-
-
-
-
 
 
 ## Known Issues & Limitations
@@ -280,7 +270,10 @@ IndexedDB and Service Workers required.
 - Advanced filtering
 - Analytics dashboard
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 66dfb18029b1afd2a82df8976dad2833726a0001
 ### Bonus Features
 - Dark mode support
 
