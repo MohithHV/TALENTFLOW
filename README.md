@@ -209,7 +209,7 @@ npm install
 npm run dev
 ```
 
-4. Open your browser to [http://localhost:](http://localhost:)
+4. Open your browser to [http://localhost](http://localhost)
 
 ### Build for Production
 
