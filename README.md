@@ -4,7 +4,8 @@ A modern, feature-rich hiring platform built with React, TypeScript, and cutting
 
 ## Live Demo
 
-**Development Server**: [http://localhost:5173](http://localhost:5173) 
+**Development Server**:
+[https://talentflow-c.vercel.app](https://talentflow-c.vercel.app)
 
 ## Features Implemented
 
