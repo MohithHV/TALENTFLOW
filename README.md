@@ -8,7 +8,7 @@ A modern, feature-rich hiring platform built with React, TypeScript, and cutting
 
 ## Features Implemented
 
-### Phase 1: Jobs Board (Complete)
+### 1: Jobs Board 
 
 - **Jobs List View**
   - Server-like pagination with configurable page sizes
@@ -42,7 +42,7 @@ A modern, feature-rich hiring platform built with React, TypeScript, and cutting
   - Full job details page with edit capabilities
   - Breadcrumb navigation back to jobs list
 
-### Phase 2: Candidates (Complete)
+### 2: Candidates 
 
 - **Virtualized List View**
   - 1000+ candidates with smooth scrolling using @tanstack/react-virtual
@@ -68,7 +68,7 @@ A modern, feature-rich hiring platform built with React, TypeScript, and cutting
   - Real-time mention highlighting
   - Note history with timestamps
 
-### Phase 3: Assessments (Complete)
+### 3: Assessments 
 
 - **Assessment Builder**
   - Visual builder interface with sidebar and canvas
