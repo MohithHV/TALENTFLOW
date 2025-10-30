@@ -111,58 +111,59 @@ talentflow/
 
 ##  Key Implementation Details
 
+
 ### 1. Data Persistence (IndexedDB via Dexie)
+- **Database:** `TalentFlowDB`
+- **Location:** `src/lib/db/index.ts`
+- **Purpose:** Provides persistent local storage for jobs, candidates, and assessments data.
 
-**Database**: `TalentFlowDB`
-
-
-**Location**: `src/lib/db/index.ts`
+---
 
 ### 2. API Simulation (MSW)
+- **Base URL:** `/api`
+- **Location:** `src/mocks/handlers.ts`
+- **Endpoints Implemented:** Jobs CRUD, Reorder, Candidates CRUD, Assessments
+- **Network Simulation:**
+  - Latency: Random 200–1200 ms
+  - Error Rate: 5–10% on write operations
+  - Reorder Endpoint: 8% failure rate (to test rollback handling)
 
-**Base URL**: `/api`
-
-**Endpoints Implemented**:
-
-
-**Network Simulation**:
-- Latency: Random 200-1200ms
-- Error Rate: 5-10% on write operations
-- Reorder endpoint: 8% failure rate (for testing rollback)
-
-**Location**: `src/mocks/handlers.ts`
+---
 
 ### 3. State Management (Zustand)
+- **Store:** `jobsStore`
+- **Location:** `src/stores/jobsStore.ts`
+- **Actions:**  
+  `setJobs`, `setCurrentJob`, `setFilters`, `setPage`, `addJob`, `updateJob`, `removeJob`, `reorderJobs`
+- **Purpose:** Centralized reactive state for job listings and pagination.
 
-**Store**: `jobsStore`
-
-**Actions**: setJobs, setCurrentJob, setFilters, setPage, addJob, updateJob, removeJob, reorderJobs
-
-**Location**: `src/stores/jobsStore.ts`
+---
 
 ### 4. Drag-and-Drop with Optimistic Updates
+- **Location:** `src/features/jobs/components/JobsList.tsx`
+- **Implementation:** Uses React DnD for intuitive reordering with instant UI feedback and rollback on failure.
 
-**Implementation** (in `JobsList.tsx`):
+---
 
 ### 5. Form Validation
+- **Libraries:** React Hook Form + Zod
+- **Location:** `src/features/jobs/components/JobFormDialog.tsx`
+- **Validation Rules:**
+  - **Title:** Required  
+  - **Slug:** Required, unique, auto-generated  
+  - **Tags:** Optional array  
+  - **Description:** Optional, max 1000 chars
 
-**Strategy**: React Hook Form + Zod schemas
-
-**Job Form Validation**:
-- Title: Required
-- Slug: Required, unique, auto-generated
-- Tags: Array, optional
-- Description: Optional, max 1000 chars
-
-**Location**: `src/features/jobs/components/JobFormDialog.tsx`
+---
 
 ### 6. Routing
+- **Location:** `src/App.tsx`
+- **Purpose:** Defines app navigation and layout structure.
 
-**Location**: `src/App.tsx`
-
+---
 ## Seed Data
 
-Generated on first app load:
+Generated on first app load for demos:
 
 | Resource | Count | Details |
 |----------|-------|---------|
@@ -176,19 +177,19 @@ Generated on first app load:
 
 ## UI Components
 
-All components follow **shadcn/ui** patterns for accessibility and consistency.
+All components follow the **shadcn/ui** design system for accessibility, and reusability.
 
 ### Custom Components Created
 
-| Component | Purpose | Props |
-|-----------|---------|-------|
-| Button | Actions | variant, size, ...HTMLButtonProps |
-| Input | Text input | ...HTMLInputProps |
-| Badge | Status tags | variant |
-| Card | Content containers | CardHeader, CardTitle, CardContent, CardFooter |
-| Dialog | Modals | open, onOpenChange, DialogContent, DialogHeader, DialogFooter |
+| Component | Purpose | Key Props |
+|------------|----------|------------|
+| **Button** | Handles user actions | `variant`, `size`, `...HTMLButtonProps` |
+| **Input** | Captures text input | `...HTMLInputProps` |
+| **Badge** | Displays status or category tags | `variant` |
+| **Card** | Organizes content into visual containers | `CardHeader`, `CardTitle`, `CardContent`, `CardFooter` |
+| **Dialog** | Provides modal dialogs for forms and actions | `open`, `onOpenChange`, `DialogContent`, `DialogHeader`, `DialogFooter` |
 
-**Location**: `src/components/ui/`
+**Location:** `src/components/ui/`
 
 ---
 
@@ -196,15 +197,30 @@ All components follow **shadcn/ui** patterns for accessibility and consistency.
 
 ### Manual Testing Checklist
 
-**Search & Filter**:
+**Search & Filter**
+- Verify search by job title works (partial and full matches)
+- Test filters by status (active/archived) and tags
+- Confirm pagination updates correctly after filtering
 
-**CRUD Operations**:
+**CRUD Operations**
+- Create new job via form (validations trigger correctly)
+- Edit existing job and verify updates persist
+- Delete or archive job and ensure UI/state sync properly
 
-**Drag & Drop**:
+**Drag & Drop**
+- Reorder jobs with mouse or touch
+- Confirm order updates instantly (optimistic UI)
+- Validate persistence and rollback behavior on failure
 
-**Navigation**:
+**Navigation**
+- Test routing between Jobs, Candidates, and Assessments pages
+- Verify browser back/forward works correctly
+- Check that modals and dialogs maintain navigation state
 
-**Persistence**:
+**Persistence**
+- Reload the app and ensure jobs and settings persist (IndexedDB via Dexie)
+- Validate data remains consistent after mock API resets
+- Confirm seed data generates only on first load
 
 
 ---
@@ -236,9 +252,11 @@ These are **intentional limitations** for a front-end demo project.
 
 ### Production Dependencies
 
+json { "react": "^18.3.1", "react-dom": "^18.3.1", "react-router-dom": "^6.28.0", "zustand": "^5.0.1", "dexie": "^4.0.10", "msw": "^2.6.5", "@dnd-kit/core": "^6.3.1", "@dnd-kit/sortable": "^9.0.0", "@dnd-kit/utilities": "^3.2.2", "react-hook-form": "^7.53.2", "@hookform/resolvers": "^3.9.1", "zod": "^3.23.8", "lucide-react": "^0.462.0", "clsx": "^2.1.1", "tailwind-merge": "^2.5.5" }
+
 
 ### Dev Dependencies
-
+json { "typescript": "~5.6.2", "vite": "^7.1.12", "@vitejs/plugin-react": "^4.3.4", "tailwindcss": "^3.4.15", "postcss": "^8.4.49", "autoprefixer": "^10.4.20", "@types/react": "^18.3.12", "@types/react-dom": "^18.3.1", "@types/node": "^22.10.1" }
 
 ---
 
