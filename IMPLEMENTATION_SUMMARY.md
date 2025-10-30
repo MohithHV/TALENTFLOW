@@ -6,9 +6,9 @@
 
 ##  Requirements Met
 
-###  Jobs Board - All Features Implemented
-###  Candiadates - All Features Implemented
-###  Assessments - All Features Implemenyed
+Jobs Board - All Features Implemented
+Candiadates - All Features Implemented
+Assessments - All Features Implemenyed
 
 ---
 
