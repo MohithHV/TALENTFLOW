@@ -115,13 +115,6 @@ talentflow/
 
 **Database**: `TalentFlowDB`
 
-**Tables**:
-- `jobs` - Job postings (indexed by: id, slug, status, order, createdAt)
-- `candidates` - Applicants (indexed by: id, email, jobId, stage, appliedAt)
-- `candidateTimeline` - Stage history
-- `candidateNotes` - Notes with @mentions
-- `assessments` - Job assessments
-- `assessmentResponses` - Candidate responses
 
 **Location**: `src/lib/db/index.ts`
 
@@ -130,13 +123,7 @@ talentflow/
 **Base URL**: `/api`
 
 **Endpoints Implemented**:
-```
-GET    /api/jobs?search=&status=&page=&pageSize=&sort=
-GET    /api/jobs/:id
-POST   /api/jobs
-PATCH  /api/jobs/:id
-PATCH  /api/jobs/:id/reorder
-```
+
 
 **Network Simulation**:
 - Latency: Random 200-1200ms
@@ -149,18 +136,6 @@ PATCH  /api/jobs/:id/reorder
 
 **Store**: `jobsStore`
 
-**State**:
-```typescript
-{
-  jobs: Job[]           // Current page of jobs
-  currentJob: Job       // Selected job for detail view
-  filters: JobFilters   // Search, status, page, sort
-  pagination: {...}     // Page, pageSize, total, totalPages
-  isLoading: boolean
-  error: string | null
-}
-```
-
 **Actions**: setJobs, setCurrentJob, setFilters, setPage, addJob, updateJob, removeJob, reorderJobs
 
 **Location**: `src/stores/jobsStore.ts`
@@ -168,25 +143,6 @@ PATCH  /api/jobs/:id/reorder
 ### 4. Drag-and-Drop with Optimistic Updates
 
 **Implementation** (in `JobsList.tsx`):
-
-```typescript
-async function handleDragEnd(event: DragEndEvent) {
-  // 1. Calculate new order
-  const reorderedJobs = arrayMove(jobs, oldIndex, newIndex);
-
-  // 2. Optimistic update (instant UI feedback)
-  reorderJobs(reorderedJobs);
-
-  // 3. Send to API
-  try {
-    await jobsApi.reorderJob(id, fromOrder, toOrder);
-  } catch (err) {
-    // 4. Rollback on failure
-    reorderJobs(previousJobs);
-    setError('Failed to reorder jobs');
-  }
-}
-```
 
 ### 5. Form Validation
 
@@ -202,17 +158,7 @@ async function handleDragEnd(event: DragEndEvent) {
 
 ### 6. Routing
 
-**Routes**:
-```
-/               → Redirect to /jobs
-/jobs           → Jobs list page
-/jobs/:id       → Job detail page
-/*              → Redirect to /jobs (catch-all)
-```
-
 **Location**: `src/App.tsx`
-
----
 
 ## Seed Data
 
@@ -251,36 +197,15 @@ All components follow **shadcn/ui** patterns for accessibility and consistency.
 ### Manual Testing Checklist
 
 **Search & Filter**:
-- [ ] Search by job title
-- [ ] Search by tags
-- [ ] Filter by Active status
-- [ ] Filter by Archived status
-- [ ] Reset filters (All)
 
 **CRUD Operations**:
-- [ ] Create new job (required fields validation)
-- [ ] Create job with tags
-- [ ] Edit existing job
-- [ ] Update job slug (uniqueness validation)
-- [ ] Archive active job
-- [ ] Unarchive archived job
 
 **Drag & Drop**:
-- [ ] Drag job to new position
-- [ ] Observe optimistic update (instant)
-- [ ] Verify order persists after refresh
-- [ ] Trigger rollback (drag multiple times until error occurs)
 
 **Navigation**:
-- [ ] Click job title to open detail
-- [ ] Use browser back button
-- [ ] Direct URL access `/jobs/[id]`
-- [ ] Copy/paste deep link
 
 **Persistence**:
-- [ ] Create/edit jobs
-- [ ] Refresh page
-- [ ] Verify changes persist
+
 
 ---
 
@@ -310,40 +235,10 @@ These are **intentional limitations** for a front-end demo project.
 ## Dependencies
 
 ### Production Dependencies
-```json
-{
-  "react": "^18.3.1",
-  "react-dom": "^18.3.1",
-  "react-router-dom": "^6.28.0",
-  "zustand": "^5.0.1",
-  "dexie": "^4.0.10",
-  "msw": "^2.6.5",
-  "@dnd-kit/core": "^6.3.1",
-  "@dnd-kit/sortable": "^9.0.0",
-  "@dnd-kit/utilities": "^3.2.2",
-  "react-hook-form": "^7.53.2",
-  "@hookform/resolvers": "^3.9.1",
-  "zod": "^3.23.8",
-  "lucide-react": "^0.462.0",
-  "clsx": "^2.1.1",
-  "tailwind-merge": "^2.5.5"
-}
-```
+
 
 ### Dev Dependencies
-```json
-{
-  "typescript": "~5.6.2",
-  "vite": "^7.1.12",
-  "@vitejs/plugin-react": "^4.3.4",
-  "tailwindcss": "^3.4.15",
-  "postcss": "^8.4.49",
-  "autoprefixer": "^10.4.20",
-  "@types/react": "^18.3.12",
-  "@types/react-dom": "^18.3.1",
-  "@types/node": "^22.10.1"
-}
-```
+
 
 ---
 
