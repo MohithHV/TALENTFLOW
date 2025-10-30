@@ -270,10 +270,7 @@ IndexedDB and Service Workers required.
 - Advanced filtering
 - Analytics dashboard
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 66dfb18029b1afd2a82df8976dad2833726a0001
 ### Bonus Features
 - Dark mode support
 
@@ -292,6 +289,15 @@ This is a technical assignment project. For production use, consider:
 MIT
 
 ---
+
+
+
+
+
+
+
+
+
 
 
 
