@@ -366,7 +366,8 @@ Throughout this project, the following standards were maintained:
 
 **Status**: Ready for Review & Demo
 
-**Access**: http://localhost:5173
+**Access**: 
+[https://talentflow-c.vercel.app](https://talentflow-c.vercel.app)
 
 
 
