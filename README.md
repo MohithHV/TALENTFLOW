@@ -1,11 +1,20 @@
 # TalentFlow - Mini Hiring Platform
 
-A modern, feature-rich hiring platform built with React, TypeScript, and cutting-edge web technologies. This is a front-end only application that simulates a complete hiring workflow with local data persistence and API mocking.
+A modern front-end hiring platform built with **React**, **TypeScript**, and **Zustand**, simulating a full recruitment workflow using **IndexedDB** and **MSW** for local persistence and API mocking.
 
 ## Live Demo
-
-**Development Server**:
 [https://talentflow-c.vercel.app](https://talentflow-c.vercel.app)
+
+## Evaluation Highlights
+- State Management
+  Implemented using Zustand for global state and Dexie (IndexedDB) for persistence.
+- Deployment
+  Fully deployed on Vercel, accessible through the live demo link.
+- Documentation
+  Detailed setup guide, feature breakdown, and architecture explanation
+- Bonus Features
+  Includes Dark mode and optimistic updates
+
 
 ## Features Implemented
 
