@@ -52,6 +52,5 @@ A modern front-end hiring platform built with **React**, **TypeScript**, and **Z
 - Dark mode and light modes
 
 ## License
-
-MIT
+    MIT
 ---
