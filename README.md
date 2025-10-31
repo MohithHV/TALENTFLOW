@@ -11,9 +11,9 @@ A modern front-end hiring platform built with **React**, **TypeScript**, and **Z
 
 ## Live Demo
 - Vercel: 
-  [https://talentflow-c.vercel.app](https://talentflow-c.vercel.app)
+  [vercel.live demo](https://talentflow-c.vercel.app)
 - Netlify:
-  [https://idyllic-faloodeh-c9b8df.netlify.app](https://idyllic-faloodeh-c9b8df.netlify.app)
+  [netlify.live demo](https://idyllic-faloodeh-c9b8df.netlify.app)
 
 ## Features Implemented
 
