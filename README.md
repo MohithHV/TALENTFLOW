@@ -7,13 +7,13 @@ A modern front-end hiring platform built with **React**, **TypeScript**, and **Z
 
 ## Evaluation Highlights
 - State Management
-  Implemented using Zustand for global state and Dexie (IndexedDB) for persistence.
+  : Implemented using Zustand for global state and Dexie (IndexedDB) for persistence.
 - Deployment
-  Fully deployed on Vercel, accessible through the live demo link.
+  : Fully deployed on Vercel, accessible through the live demo link.
 - Documentation
-  Detailed setup guide, feature breakdown, and architecture explanation
+  : Detailed setup guide, feature breakdown, and architecture explanation
 - Bonus Features
-  Includes Dark mode and optimistic updates
+  : Includes Dark mode and optimistic updates
 
 
 ## Features Implemented
