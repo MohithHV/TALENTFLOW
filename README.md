@@ -47,3 +47,11 @@ A modern front-end hiring platform built with **React**, **TypeScript**, and **Z
 *   **[Quick Start Guide](QUICKSTART.md)**: A guide to quickly get the application running and try out the features.
 *   **[Setup Guide](SETUP.md)**: Detailed setup instructions.
 *   **[Implementation](IMPLEMENTATION.md)**: In-depth explanation of the technical implementation.
+
+### Bonus Features
+- Dark mode and light modes
+
+## License
+
+MIT
+---
