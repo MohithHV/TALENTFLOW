@@ -5,6 +5,8 @@ A modern front-end hiring platform built with **React**, **TypeScript**, and **Z
 ## Live Demo
 [https://talentflow-c.vercel.app](https://talentflow-c.vercel.app)
 
+You can open the above link directly in your browser to view the live app (hosted on Vercel).
+
 ## Evaluation Highlights
 - State Management
   : Implemented using Zustand for global state and Dexie (IndexedDB) for persistence.
@@ -282,18 +284,7 @@ IndexedDB and Service Workers required.
 
 
 ### Bonus Features
-- Dark mode support
-
-
-
-
-
-
-
-
-
-
-
+- Dark mode and light modes
 
 
 
@@ -302,6 +293,15 @@ IndexedDB and Service Workers required.
 MIT
 
 ---
+
+
+
+
+
+
+
+
+
 
 
 
