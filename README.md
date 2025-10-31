@@ -276,14 +276,17 @@ IndexedDB and Service Workers required.
 - Dark mode support
 
 
-## Contributing
 
-This is a technical assignment project. For production use, consider:
-- Adding real backend integration
-- Implementing authentication
-- Adding unit and E2E tests
-- Enhancing accessibility
-- Adding more comprehensive validation
+
+
+
+
+
+
+
+
+
+
 
 ## License
 
