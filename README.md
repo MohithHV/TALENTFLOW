@@ -10,8 +10,10 @@ A modern front-end hiring platform built with **React**, **TypeScript**, and **Z
 *   **Bonus Features**: Includes Dark mode and optimistic updates.
 
 ## Live Demo
-
-[https://talentflow-c.vercel.app](https://talentflow-c.vercel.app)
+- Vercel: 
+  [https://talentflow-c.vercel.app](https://talentflow-c.vercel.app)
+- Netlify:
+  [https://idyllic-faloodeh-c9b8df.netlify.app](https://idyllic-faloodeh-c9b8df.netlify.app)
 
 ## Features Implemented
 
