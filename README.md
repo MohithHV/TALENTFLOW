@@ -3,7 +3,7 @@
 A modern front-end hiring platform built with **React**, **TypeScript**, and **Zustand**, simulating a full recruitment workflow using **IndexedDB** and **MSW** for local persistence and API mocking.
 
 ## Live Demo
-[https://talentflow-c.vercel.app](https://talentflow-c.vercel.app)
+[https://talentflow.vercel.app](https://talentflow.vercel.app)
 
 You can open the above link directly in your browser to view the live app (hosted on Vercel).
 
