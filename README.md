@@ -2,320 +2,48 @@
 
 A modern front-end hiring platform built with **React**, **TypeScript**, and **Zustand**, simulating a full recruitment workflow using **IndexedDB** and **MSW** for local persistence and API mocking.
 
-## Live Demo
-[https://talentflow-c.vercel.app](https://talentflow-c.vercel.app)
-
-You can open the above link directly in your browser to view the live app (hosted on Vercel).
-
 ## Evaluation Highlights
-- State Management
-  : Implemented using Zustand for global state and Dexie (IndexedDB) for persistence.
-- Deployment
-  : Fully deployed on Vercel, accessible through the live demo link.
-- Documentation
-  : Detailed setup guide, feature breakdown, and architecture explanation
-- Bonus Features
-  : Includes Dark mode and optimistic updates
 
+*   **State Management**: Implemented using Zustand for global state and Dexie (IndexedDB) for persistence.
+*   **Deployment**: Fully deployed on Vercel, accessible through the live demo link.
+*   **Documentation**: Detailed setup guide, feature breakdown, and architecture explanation.
+*   **Bonus Features**: Includes Dark mode and optimistic updates.
+
+## Live Demo
+
+[https://talentflow-c.vercel.app](https://talentflow-c.vercel.app)
 
 ## Features Implemented
 
-### 1: Jobs Board 
-
-- **Jobs List View**
-  - Server-like pagination with configurable page sizes
-  - Real-time search by job title and tags
-  - Filter by status (All, Active, Archived)
-  - Responsive grid layout with job cards
-  - Loading states and error handling
-
-- **Create/Edit Jobs**
-  - Modal-based job form with full validation
-  - Required fields: Title (auto-generates unique slug)
-  - Optional fields: Department, Location, Description
-  - Dynamic tags system (add/remove tags)
-  - Status toggle (Active/Archived)
-  - Form validation with error messages
-
-- **Archive/Unarchive**
-  - Quick toggle from job cards
-  - Available from detail pages
-  - Persists to IndexedDB via MSW
-
-- **Drag-and-Drop Reordering**
-  - Intuitive drag-and-drop interface using @dnd-kit
-  - Optimistic UI updates for instant feedback
-  - Automatic rollback on server errors
-  - Visual feedback during dragging
-  - 5-10% simulated error rate to test rollback
-
-- **Deep Linking**
-  - Direct navigation to jobs via `/jobs/:jobId`
-  - Full job details page with edit capabilities
-  - Breadcrumb navigation back to jobs list
-
-### 2: Candidates 
-
-- **Virtualized List View**
-  - 1000+ candidates with smooth scrolling using @tanstack/react-virtual
-  - Client-side search by name and email
-  - Server-like filtering by stage (Applied, Screening, Technical, Offer, Hired, Rejected)
-  - Responsive layout with candidate cards
-
-- **Kanban Board**
-  - Visual pipeline with 6 stage columns
-  - Drag-and-drop candidates between stages
-  - Optimistic updates with automatic rollback on errors
-  - Real-time stage count per column
-
-- **Candidate Profile**
-  - Comprehensive profile view with timeline
-  - Stage history timeline showing all transitions
-  - Contact information and application details
-  - Deep linking via `/candidates/:id`
-
-- **Notes System**
-  - Add notes to candidates
-  - @mention support with autocomplete suggestions
-  - Real-time mention highlighting
-  - Note history with timestamps
-
-### 3: Assessments 
-
-- **Assessment Builder**
-  - Visual builder interface with sidebar and canvas
-  - Add and organize sections
-  - Add questions to sections
-  - Edit section titles and descriptions
-  - Live save functionality
-
-- **Question Types**
-  - Single Choice (radio buttons)
-  - Multiple Choice (checkboxes)
-  - Short Text (single line input)
-  - Long Text (textarea)
-  - Numeric (with min/max validation)
-  - File Upload (stub for file selection)
-
-- **Live Preview Pane**
-  - Real-time preview of assessment as you build
-  - Split-screen builder + preview layout
-  - Toggle preview visibility
-  - Shows exactly how candidates will see the form
-
-- **Form Runtime with Validation**
-  - Required field validation
-  - Numeric range validation (min/max)
-  - Text length validation (min/max length)
-  - Real-time validation feedback
-  - Error messages on invalid input
-
-- **Conditional Question Logic**
-  - Show/hide questions based on previous answers
-  - Simple conditional rules (if Q1 === "Yes", show Q2)
-  - Visual indicator for conditional questions
-  - Dynamic form updates as user answers
+*   **Jobs Board**: Create, edit, archive, and reorder job postings with drag-and-drop.
+*   **Candidates Pipeline**: Manage candidates in a Kanban board and view detailed profiles.
+*   **Assessments Builder**: Dynamically create custom assessments for jobs.
 
 ## Tech Stack
 
-### Core
-- **React 18** - UI framework
-- **TypeScript** - Type safety
-- **Vite** - Build tool and dev server
-
-### State & Data
-- **Zustand** - Lightweight state management
-- **Dexie** - IndexedDB wrapper for local persistence
-- **MSW (Mock Service Worker)** - API mocking with artificial latency
-
-### UI & Styling
-- **Tailwind CSS** - Utility-first CSS framework
-- **shadcn/ui principles** - Accessible component patterns
-- **Lucide React** - Icon library
-
-### Drag & Drop
-- **@dnd-kit/core** - Modern drag-and-drop toolkit
-- **@dnd-kit/sortable** - Sortable list functionality
-
-### Forms & Validation
-- **React Hook Form** - Performant form handling
-- **Zod** - TypeScript-first schema validation
-
-### Routing
-- **React Router v6** - Client-side routing with deep linking
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── ui/              # Reusable UI components (Button, Input, Dialog, etc.)
-│   └── shared/          # Shared feature components
-├── features/
-│   └── jobs/            # Jobs feature module
-│       ├── components/  # JobsList, JobCard, JobFormDialog, JobDetail
-│       └── JobsPage.tsx # Main jobs page
-├── lib/
-│   ├── api/            # API client functions
-│   ├── db/             # Dexie database setup and helpers
-│   └── utils/          # Utility functions
-├── mocks/
-│   ├── handlers.ts     # MSW request handlers
-│   ├── browser.ts      # MSW browser worker setup
-│   ├── seedData.ts     # Seed data generation
-│   └── init.ts         # Database initialization
-├── stores/             # Zustand stores
-│   └── jobsStore.ts    # Jobs state management
-└── types/              # TypeScript type definitions
-```
-
-## Architecture Decisions
-
-### 1. **Local-First Architecture**
-- All data persists to IndexedDB via Dexie
-- MSW acts as a "network layer" simulating REST API
-- Data survives page refreshes
-- No real backend required
-
-### 2. **Optimistic UI Updates**
-- Immediate UI feedback for drag-and-drop
-- Automatic rollback on server errors
-- Better perceived performance
-
-### 3. **Component-Based Architecture**
-- Feature-based organization (jobs, candidates, assessments)
-- Reusable UI components following shadcn/ui patterns
-- Separation of concerns (UI, state, API)
-
-### 4. **Type Safety**
-- Comprehensive TypeScript types for all entities
-- Strict type checking enabled
-- Runtime validation with Zod
-
-### 5. **Simulated Network Conditions**
-- 200-1200ms artificial latency
-- 5-10% error rate on write operations
-- Tests resilience and error handling
-
-## Setup Instructions
-
-### Prerequisites
-- Node.js 18+ and npm
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd talentflow
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-4. Open your browser to [http://localhost](http://localhost)
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-The built files will be in the `dist/` directory.
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
-## Seed Data
-
-The application automatically seeds the database on first run with:
-- **25 jobs** (mix of active and archived)
-- **1,000 candidates** (randomly distributed across jobs and stages)
-- **3 assessments** (with 10+ questions each)
-
-Data persists in IndexedDB (`TalentFlowDB`) and survives page refreshes.
-
-## API Endpoints (Mocked)
-
-### Jobs
-- `GET /api/jobs` - List jobs with pagination, search, filtering
-- `GET /api/jobs/:id` - Get single job
-- `POST /api/jobs` - Create new job
-- `PATCH /api/jobs/:id` - Update job
-
-
-## Known Issues & Limitations
-
-1. **No Authentication** - This is a demo application without user auth
-2. **Client-Side Only** - All data is local to the browser
-3. **No Real Backend** - MSW simulates API, not a real server
-4. **Limited Validation** - Basic validation only (can be extended)
-
-## Browser Support
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-
-IndexedDB and Service Workers required.
-
-## Performance Considerations
-
-- **Pagination** - Jobs list is paginated (default 10 per page)
-- **Lazy Loading** - Routes are code-split
-- **Optimistic Updates** - Instant UI feedback
-- **Efficient Re-renders** - Zustand for minimal re-renders
-
-## Future Enhancements
-- Export data (CSV, JSON)
-- Bulk operations
-- Advanced filtering
-- Analytics dashboard
-
-
-### Bonus Features
-- Dark mode and light modes
-
-
-
-## License
-
-MIT
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*   **React 18** & **TypeScript**
+*   **Vite**
+*   **Zustand** & **Dexie (IndexedDB)**
+*   **Mock Service Worker (MSW)**
+*   **Tailwind CSS**
+*   **@dnd-kit/core**
+*   **React Hook Form** & **Zod**
+*   **React Router v6**
+
+## Getting Started
+
+1.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+2.  **Start the development server**:
+    ```bash
+    npm run dev
+    ```
+3.  **Open your browser** to `http://localhost:5173`.
+
+## Documentation
+
+*   **[Quick Start Guide](QUICK_START_GUIDE.md)**: A guide to quickly get the application running and try out the features.
+*   **[Setup Guide](SETUP_GUIDE.md)**: Detailed setup instructions.
+*   **[Implementation](IMPLEMENTATION.md)**: In-depth explanation of the technical implementation.
